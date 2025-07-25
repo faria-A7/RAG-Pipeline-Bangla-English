@@ -78,5 +78,5 @@ This is a basic RAG pipeline capable of understanding and responding to both  En
 
 ---
 
-##Additional information:
+## Additional information:
 - Before implementing the final model, I have tried and tested other models as well. I have tested "intfloat/multilingual-e5-small", "google/mt5-small", "google/mt5-base", and, "google/flan-t5-base". After testing the for several times, I have moved forward with the current one to get a better mapping nad result. Those models were failing at some points or the other way around. 
