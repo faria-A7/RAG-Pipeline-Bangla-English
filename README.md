@@ -53,7 +53,7 @@ This is a basic RAG pipeline capable of understanding and responding to both  En
 - **Method/Library**: Used `pdfplumber` to extract text from the PDF.
 - **Why**: `pdfplumber` is efficient for handling scanned or complex PDFs and provides raw text extraction with minimal setup.
 - **Challenges**: Some formatting issues (e.g., extra whitespace, inconsistent line breaks) were present, addressed using `re.sub(r'\\s+', ' ', text)` in `preprocess_text`.
-- Also did the OCR PDF for the given raw pdf through the platform, (https://www.ilovepdf.com/) for better letter recognization. 
+- Also, I did the "OCR PDF" for the given raw pdf through the platform (https://www.ilovepdf.com/) for better letter recognization. 
 
 ### 2. What chunking strategy did you choose (e.g., paragraph-based, sentence-based, character limit)? Why do you think it works well for semantic retrieval?
 - **Strategy**: Character limit-based chunking (max 500 characters) with sentence boundaries (`re.split(r'[।\\n]'`).
@@ -75,3 +75,8 @@ This is a basic RAG pipeline capable of understanding and responding to both  En
 ### 6. Do the results seem relevant? If not, what might improve them (e.g., better chunking, better embedding model, larger document)?
 - **Relevance**: Results are generally relevant (e.g., Groundedness ~0.85), especially for mapped queries.
 - **Improvements**: Better chunking (e.g., dynamic sizing based on semantic coherence), a multilingual embedding model (e.g., `mBERT`), or a larger, diverse document corpus could enhance performance.
+
+---
+
+##Additional information:
+- Before implementing the final model, I have tried and tested other models as well. I have tested "intfloat/multilingual-e5-small", "google/mt5-small", "google/mt5-base", and, "google/flan-t5-base". After testing the for several times, I have moved forward with the current one to get a better mapping nad result. Those models were failing at some points or the other way around. 
